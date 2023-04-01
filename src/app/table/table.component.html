@@ -1,0 +1,30 @@
+
+
+<div class="fs-3 fw-semibold ms-3 mt-1"> Carros Cadastrados:</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Montadora</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Ano</th>
+      <th scope="col" class="text-end ">Opçoes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let objCar of carsTest">
+        <td>{{ objCar.id }}</td>
+        <td>{{ objCar.name }}</td>
+        <td>{{ objCar.manufacture }}</td>
+        <td>{{ objCar.price }}</td>
+        <td>{{ objCar.year }}</td>
+        <td class="text-end ">
+          <button class="btn btn-success btn-sm text" (click)="showTest(objCar)">Alterar</button>
+          <button class="btn btn-danger btn-sm ms-2">Remover</button>
+        </td>
+    </tr>
+
+  </tbody>
+</table>
+
