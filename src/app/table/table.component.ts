@@ -36,7 +36,7 @@ carsTest : carInterface[] = [
 ]
 
 
-showTest(selectedCar : carInterface) {
+changeCar(selectedCar : carInterface) {
   console.log(this.carsTest);
 }
 }

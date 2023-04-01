@@ -5,30 +5,30 @@
         <div class="form-group row mt-1">
           <label class="col-3 col-form-label ms-5">Nome:</label>
           <div class="col-8">
-            <input type="text" class="form-control" name="nome"  required>
+            <input type="text" class="form-control" name="nome" [(ngModel)]="objCar.name" required>
           </div>
         </div>
         <!----------------------------->
       <div class="form-group row mt-1">
         <label class="col-3 col-form-label ms-5">Montadora:</label>
         <div class="col-8">
-          <input type="text" class="form-control" name="montadora"  required>
+          <input type="text" class="form-control" name="montadora" [(ngModel)]="objCar.manufacture" required>
         </div>
       </div>
         <!------------------------------->
         <div class="form-group row mt-1">
           <label class="col-3 col-form-label ms-5">Preço:</label>
           <div class="col-3">
-            <input type="text" class="form-control" name="preço"  required>
+            <input type="text" class="form-control" name="preço"  [(ngModel)]="objCar.price" required>
           </div>
           <label class="col-1 col-form-label ms-0 ">Ano:</label>
           <div class="col-4">
-            <input type="text" class="form-control" name="preço"  required>
+            <input type="text" class="form-control" name="ano" [(ngModel)]="objCar.year" required>
           </div>
         </div>
         <!------------------------------->
         <div class="row mt-1">
-          <button type="submit" class="btn btn-primary col-1 ms-5 ">Salvar</button>
+          <button type="submit" class="btn btn-primary col-1 ms-5" (click)="save()">Salvar</button>
         </div>
         <app-table></app-table>
     </form>
