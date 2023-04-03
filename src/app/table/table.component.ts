@@ -10,9 +10,10 @@ import { carInterface } from '../car';
 export class TableComponent {
 
     newCar : carInterface = {} as carInterface; // componente pai passando este objeto para componente filho
-    isUpdate : boolean = false;
+    isUpdate : boolean = false; // um valor booleano que indica para o saveCar() se esta atualizando um carro existente ou adicionando um novo
+    count : number = 4; // utilizado para contar o ID
 
-    carsArray : carInterface[] = [
+    carsArray : carInterface[] = [ // array de objetos carInterface que representa a lista de carros
         {
           id: 1,
           name: 'Focus',
@@ -36,21 +37,24 @@ export class TableComponent {
         }
     ]
 
-    saveCar(){
+  saveCar() {//um método que adiciona um novo carro ao carsArray ou atualiza um carro existente, dependendo do valor de isUpdate
       if(!this.isUpdate){
         this.carsArray.push(this.newCar);
-        this.newCar.id = this.carsArray.length;
+        this.newCar.id = this.count;
+        this.count++;
       }
 
       this.newCar = {} as carInterface;
+      this.isUpdate = false;
     }
 
-    update(selectedCar : carInterface) {
+  update(selectedCar: carInterface) {//um método que define newCar para o carro selecionado e define isUpdate como true para preparar a edição
       this.newCar = selectedCar;
       this.isUpdate = true;
+
     }
 
-    remove(removeCar : carInterface){
+    remove(removeCar : carInterface){// remove um carro do  carsArray
       this.carsArray = this.carsArray.filter(c => c !== removeCar);
     }
 }

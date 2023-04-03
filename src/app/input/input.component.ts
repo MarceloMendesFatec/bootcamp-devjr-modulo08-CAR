@@ -17,6 +17,6 @@ export class InputComponent {
 
 
     save(){
-      this.saveEmitter.emit();
+      this.saveEmitter.emit(); //quando a funcao e chamada emite um evento indicando que algo deve ser salvo
     }
 }

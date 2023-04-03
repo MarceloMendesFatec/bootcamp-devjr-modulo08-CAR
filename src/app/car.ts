@@ -6,3 +6,7 @@ export interface carInterface {
   year?: number
 
 }
+
+
+/* interface utilizada para servir de modelo para um objeto " carro "
+dentro da aplicacao, fornecendo seus atributos  */
