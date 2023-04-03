@@ -10,7 +10,7 @@ import { carInterface } from '../car';
 export class TableComponent {
 
     newCar : carInterface = {} as carInterface; // componente pai passando este objeto para componente filho
-
+    isUpdate : boolean = false;
 
     carsArray : carInterface[] = [
         {
@@ -37,9 +37,20 @@ export class TableComponent {
     ]
 
     saveCar(){
-      this.carsArray.push(this.newCar);
-      this.newCar.id = this.carsArray.length ;
+      if(!this.isUpdate){
+        this.carsArray.push(this.newCar);
+        this.newCar.id = this.carsArray.length;
+      }
+
       this.newCar = {} as carInterface;
     }
 
+    update(selectedCar : carInterface) {
+      this.newCar = selectedCar;
+      this.isUpdate = true;
+    }
+
+    remove(removeCar : carInterface){
+      this.carsArray = this.carsArray.filter(c => c !== removeCar);
+    }
 }

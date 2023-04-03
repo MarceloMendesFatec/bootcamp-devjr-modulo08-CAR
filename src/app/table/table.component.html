@@ -22,8 +22,8 @@
         <td>{{ objCar.price }}</td>
         <td>{{ objCar.year }}</td>
         <td class="text-end ">
-          <button class="btn btn-success btn-sm text">Alterar</button>
-          <button class="btn btn-danger btn-sm ms-2" >Remover</button>
+          <button class="btn btn-success btn-sm text" (click)="update(objCar)">Alterar</button>
+          <button class="btn btn-danger btn-sm ms-2" (click)="remove(objCar)">Remover</button>
         </td>
     </tr>
 
