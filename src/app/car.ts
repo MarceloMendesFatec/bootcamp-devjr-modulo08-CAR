@@ -4,5 +4,5 @@ export interface carInterface {
   manufacture?: String,
   price?: number,
   year?: number
-  
+
 }

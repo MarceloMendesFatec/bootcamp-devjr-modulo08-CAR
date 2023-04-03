@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { carInterface } from '../car';
 
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -8,35 +9,37 @@ import { carInterface } from '../car';
 })
 export class TableComponent {
 
-cars : carInterface = {} as carInterface;
+    newCar : carInterface = {} as carInterface; // componente pai passando este objeto para componente filho
 
 
-carsTest : carInterface[] = [
-    {
-      id: 1,
-      name: 'Ford',
-      manufacture: 'Toyota',
-      price: 100000,
-      year: 2013
-    },
-    {
-      id: 2,
-      name: 'Ford',
-      manufacture: 'Toyota',
-      price:3100000,
-      year: 2019
-    },
-    {
-      id: 3,
-      name: 'Ford',
-      manufacture: 'Toyota',
-      price: 200000,
-      year: 2015
+    carsArray : carInterface[] = [
+        {
+          id: 1,
+          name: 'Focus',
+          manufacture: 'Ford',
+          price: 100000,
+          year: 2013
+        },
+        {
+          id: 2,
+          name: 'Corolla',
+          manufacture: 'Toyota',
+          price:3100000,
+          year: 2019
+        },
+        {
+          id: 3,
+          name: 'Accord',
+          manufacture: 'Honda',
+          price: 200000,
+          year: 2015
+        }
+    ]
+
+    saveCar(){
+      this.carsArray.push(this.newCar);
+      this.newCar.id = this.carsArray.length ;
+      this.newCar = {} as carInterface;
     }
-]
 
-
-changeCar(selectedCar : carInterface) {
-  console.log(this.carsTest);
-}
 }

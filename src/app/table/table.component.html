@@ -1,6 +1,8 @@
 
 
-<div class="fs-3 fw-semibold ms-3 mt-1"> Carros Cadastrados:</div>
+<div class="container bg-secondary bg-gradient bg-opacity-10">
+  <app-input [cars]="newCar" (saveEmitter)="saveCar()"></app-input>
+  <div class="fs-3 fw-semibold ms-3 mt-1"> Carros Cadastrados:</div>
 <table class="table">
   <thead>
     <tr>
@@ -13,18 +15,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let objCar of carsTest">
+    <tr *ngFor="let objCar of carsArray">
         <td>{{ objCar.id }}</td>
         <td>{{ objCar.name }}</td>
         <td>{{ objCar.manufacture }}</td>
         <td>{{ objCar.price }}</td>
         <td>{{ objCar.year }}</td>
         <td class="text-end ">
-          <button class="btn btn-success btn-sm text" (click)="changeCar(objCar)">Alterar</button>
-          <button class="btn btn-danger btn-sm ms-2">Remover</button>
+          <button class="btn btn-success btn-sm text">Alterar</button>
+          <button class="btn btn-danger btn-sm ms-2" >Remover</button>
         </td>
     </tr>
 
   </tbody>
 </table>
+</div>
+
 

@@ -9,15 +9,14 @@ import { carInterface } from '../car';
 export class InputComponent {
 
 
-  @Input()
-  objCar : carInterface = {} as carInterface;
+    @Input()
+    cars: carInterface = {} as carInterface; // do pai para o filho
 
-  @Output()
-  saveEmitter = new EventEmitter();
+    @Output() // do filho para o pai
+    saveEmitter = new EventEmitter();
 
-  save(): void {
-    this.saveEmitter.emit()
 
-  }
-
+    save(){
+      this.saveEmitter.emit();
+    }
 }
